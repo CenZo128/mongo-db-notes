@@ -4,9 +4,10 @@ const ProductController = require('../controllers/Product')
 
 const { authentication, authorization } = require('../middlewares/auth')
 
-router.get('/', authentication, ProductController.getProduct)
-router.post('/', authentication, ProductController.addProduct)
-router.delete('/:id', authentication, authorization, ProductController.deleteProduct)
-router.put('/:id', authentication, authorization, ProductController.updateProduct)
+router.get('/', ProductController.getProduct)
+// router.get('/add', ProductController.addProduct)
+router.post('/', ProductController.addProduct)
+router.delete('/:id', ProductController.deleteProduct)
+router.put('/:id', ProductController.updateProduct)
 
 module.exports = router;
